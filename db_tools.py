@@ -90,13 +90,6 @@ def get_col_names(db_name, table_name):
     return [member[0] for member in c.description]
 
 
-# def get_col_names(db_name):
-#     conn = sl.connect(db_name)
-#     c = conn.cursor()
-#     c.execute(f"select * from {db_name[0:-3].upper()}")
-#     return [member[0] for member in c.description]
-
-
 def create_string(input_list):
     output_string = ""
     for i in range(len(input_list)):
@@ -112,12 +105,3 @@ def print_str_db(name_db, input_str):
     cur.execute("{}".format(input_str))
     for i in cur:
         print(i)
-
-
-# add_pupil("pupils.db")
-# read_data("pupils.db")
-# create_db()
-# delete_data("pupils.db")
-# print(select_table_in_bd("pupils.db"))
-# print(get_col_names("pupils.db", "estimate"))
-# print(select_table_in_bd("pupils.db"))

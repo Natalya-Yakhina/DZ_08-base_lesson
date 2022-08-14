@@ -8,7 +8,6 @@ import os
 def button_click():
     db_name = "pupils.db"
     table_name = "PUPILS"
-    # table_name =
     marker = 1
     is_OK = True
     while is_OK:
