@@ -54,7 +54,7 @@ def select_table_in_bd(name_db):
 
 
 def add_data_to_table(db_name, table_name):
-    list_col_name = get_col_names(db_name)
+    list_col_name = get_col_names(db_name, table_name)
     list_col_name.remove("id")
     list_values = []
     for i in range(len(list_col_name)):
@@ -68,7 +68,7 @@ def add_data_to_table(db_name, table_name):
 
 
 def read_data(db_name, table_name):
-    print(get_col_names("pupils.db"))
+    print(get_col_names("pupils.db", table_name))
     con = sl.connect(db_name)
     with con:
         data = con.execute(f"SELECT * FROM {table_name} ")
@@ -83,11 +83,18 @@ def delete_data(db_name, table_name, del_num):
     con.commit()
 
 
-def get_col_names(db_name):
+def get_col_names(db_name, table_name):
     conn = sl.connect(db_name)
     c = conn.cursor()
-    c.execute(f"select * from {db_name[0:-3].upper()}")
+    c.execute(f"select * from {table_name}")
     return [member[0] for member in c.description]
+
+
+# def get_col_names(db_name):
+#     conn = sl.connect(db_name)
+#     c = conn.cursor()
+#     c.execute(f"select * from {db_name[0:-3].upper()}")
+#     return [member[0] for member in c.description]
 
 
 def create_string(input_list):
@@ -99,7 +106,17 @@ def create_string(input_list):
     return output_string
 
 
+def print_str_db(name_db, input_str):
+    con = sl.connect(name_db)
+    cur = con.cursor()
+    cur.execute("{}".format(input_str))
+    for i in cur:
+        print(i)
+
+
 # add_pupil("pupils.db")
 # read_data("pupils.db")
 # create_db()
 # delete_data("pupils.db")
+# print(select_table_in_bd("pupils.db"))
+# print(get_col_names("pupils.db", "estimate"))

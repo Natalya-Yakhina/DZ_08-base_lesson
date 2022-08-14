@@ -1,6 +1,7 @@
 import view_result as vr
 import logger as log
 import db_tools as db
+import db_reports as dbr
 import os
 
 
@@ -12,7 +13,7 @@ def button_click():
     while is_OK:
         vr.view("Текущая база данных: ", db_name)
         marker = vr.input_data(
-            " Press 1 - select a db file \n press 2 - working with the database \n press 3 - free \n press 4 -  exit\n: "
+            " Press 1 - select a db file \n press 2 - working with the database \n press 3 - reports \n press 4 -  exit\n: "
         )
         log.logger("User klick", marker)
 
@@ -59,7 +60,8 @@ def button_click():
                 is_OK = True
 
             case "3":
-                print("1")
+                dbr.db_repotrs()
+
             case "4":
                 log.logger("Programm close", "")
                 is_OK = False

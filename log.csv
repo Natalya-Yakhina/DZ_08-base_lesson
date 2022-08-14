@@ -119,3 +119,16 @@
 19:32:29; User klick; 1
 19:33:25; User klick; 2
 19:37:45; User klick; 2
+21:25:29; User klick; 3
+21:25:34; User klick; 1
+21:28:03; User klick; 3
+21:28:08; User klick; 1
+21:36:04; User klick; 4
+21:46:35; User klick; 3
+21:50:15; User klick; 3
+21:50:19; User print report: ; "SELECT * FROM users;"
+21:50:46; User klick; 3
+21:50:51; User print report: ; SELECT * FROM pupils;
+21:52:31; User klick; & C:/Users/Name/AppData/Local/Microsoft/WindowsApps/python3.10.exe c:/pythonLessons/DZ_08/db_tools.py
+21:59:46; User klick; 1
+21:59:46; User print report: ; SELECT name,  MATHEMATICS, RUSSIAN, HISTORY FROM PUPILS, ESTIMATE  WHERE pupil_id = PUPILS.id
