@@ -7,13 +7,14 @@ import os
 
 def button_click():
     db_name = "pupils.db"
+    table_name = "PUPILS"
     # table_name =
-    marker = 3
+    marker = 1
     is_OK = True
     while is_OK:
         vr.view("Текущая база данных: ", db_name)
         marker = vr.input_data(
-            " Press 1 - select a db file \n press 2 - working with the database \n press 3 - reports \n press 4 -  exit\n: "
+            " Press 1 - выбор базы данных \n press 2 - работа с базами данных \n press 3 - запросы \n press 4 -  выход\n: "
         )
         log.logger("User klick", marker)
 
@@ -27,8 +28,9 @@ def button_click():
             case "2":
                 while is_OK:
                     vr.view("Текущая база данных: ", db_name)
+                    vr.view("Текущая таблица в БД: ", table_name)
                     marker_db = vr.input_data(
-                        " Press 1 - create table \n press 2 - select table \n press 3 - watch list of tables in database \n press 4 - add data \n press 5 - delete pupil \n press 6 - create new database \n press 7 - to previous menu\n: "
+                        " Press 1 - create table \n press 2 - select table \n press 3 - watch list of tables in database \n press 4 - add data \n press 5 - delete data \n press 6 - create new database \n press 7 - to previous menu\n: "
                     )
                     match marker_db:
                         case "1":
@@ -60,7 +62,7 @@ def button_click():
                 is_OK = True
 
             case "3":
-                dbr.db_repotrs()
+                dbr.db_repotrs(db_name)
 
             case "4":
                 log.logger("Programm close", "")

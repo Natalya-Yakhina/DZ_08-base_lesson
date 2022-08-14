@@ -120,3 +120,4 @@ def print_str_db(name_db, input_str):
 # delete_data("pupils.db")
 # print(select_table_in_bd("pupils.db"))
 # print(get_col_names("pupils.db", "estimate"))
+# print(select_table_in_bd("pupils.db"))

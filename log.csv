@@ -132,3 +132,55 @@
 21:52:31; User klick; & C:/Users/Name/AppData/Local/Microsoft/WindowsApps/python3.10.exe c:/pythonLessons/DZ_08/db_tools.py
 21:59:46; User klick; 1
 21:59:46; User print report: ; SELECT name,  MATHEMATICS, RUSSIAN, HISTORY FROM PUPILS, ESTIMATE  WHERE pupil_id = PUPILS.id
+22:19:54; User klick; 4
+22:19:54; Exit previous menu; 
+22:23:46; User klick; 3
+22:24:07; User print report: ; SELECT * FROM pupils;
+22:24:25; User klick; 1
+22:24:25; User print report: ; SELECT name,  MATHEMATICS, RUSSIAN, HISTORY FROM PUPILS, ESTIMATE  WHERE pupil_id = PUPILS.id
+22:24:32; User klick; 4
+22:24:32; Exit previous menu; 
+22:26:14; User klick; 1
+22:26:32; User klick; 2
+22:27:05; Exit previous menu; 
+22:27:07; User klick; 3
+22:27:21; User klick; 4
+22:27:21; Exit previous menu; 
+22:27:24; User klick; 3
+22:27:34; User klick; 1
+22:27:34; User print report: ; SELECT name,  MATHEMATICS, RUSSIAN, HISTORY FROM PUPILS, ESTIMATE  WHERE pupil_id = PUPILS.id
+22:28:18; User klick; 4
+22:28:18; Exit previous menu; 
+22:28:20; User klick; 4
+22:28:20; Programm close; 
+22:37:17; User klick; 4
+22:37:17; Exit previous menu; 
+22:39:15; User klick; 2
+22:39:15; User print report: ; SELECT name,  MATHEMATICS, RUSSIAN, HISTORY FROM PUPILS, ESTIMATE  WHERE pupil_id = PUPILS.id
+22:57:06; User klick; 3
+22:57:14; User klick; 2
+22:57:14; User print report: ; SELECT name,  MATHEMATICS, RUSSIAN, HISTORY FROM PUPILS, ESTIMATE  WHERE pupil_id = PUPILS.id
+22:57:22; User klick; 4
+22:57:22; Exit previous menu; 
+22:57:25; User klick; 4
+22:57:25; Programm close; 
+23:00:13; User klick; 3
+23:00:19; User klick; 2
+23:00:19; User print report: ; SELECT name,  MATHEMATICS, RUSSIAN, HISTORY FROM PUPILS, ESTIMATE  WHERE pupil_id = PUPILS.id
+23:00:30; User klick; 3
+23:01:06; User print report: ; SELECT * FROM estimate
+23:01:12; User klick; 1
+23:01:12; User print report: ; SELECT name,  MATHEMATICS, RUSSIAN, HISTORY FROM PUPILS, ESTIMATE  WHERE pupil_id = PUPILS.id
+23:01:18; User klick; 4
+23:01:18; Exit previous menu; 
+23:01:21; User klick; 2
+23:03:04; User klick; 2
+23:03:56; User klick; 2
+23:04:12; User select table: ; ESTIMATE
+23:04:32; User select table: ; PUPILS
+23:04:41; Exit previous menu; 
+23:04:44; User klick; 3
+23:04:47; User klick; 2
+23:04:47; User print report: ; SELECT name,  MATHEMATICS, RUSSIAN, HISTORY FROM PUPILS, ESTIMATE  WHERE pupil_id = PUPILS.id
+23:04:50; User klick; 1
+23:04:50; User print report: ; SELECT name,  MATHEMATICS, RUSSIAN, HISTORY FROM PUPILS, ESTIMATE  WHERE pupil_id = PUPILS.id

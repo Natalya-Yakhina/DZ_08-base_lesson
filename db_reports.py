@@ -4,14 +4,14 @@ import sqlite3 as sl
 import logger as log
 
 
-def db_repotrs():
+def db_repotrs(db_name):
     marker = 1
     is_OK = True
-    db_name = "pupils.db"
+    # db_name = "pupils.db"
     while is_OK:
         vr.view("Текущая база данных: ", db_name)
         marker = vr.input_data(
-            " Press 1 - Общий перечень. Имена с оценками по всем предметам \n press 2 - working with the database \n press 3 - ввести свой запрос к БД \n press 4 - to previous menu\n: "
+            " Press 1 - Общий перечень. Имена с оценками по всем предметам \n press 2 - средний балл \n press 3 - ввести свой запрос к БД \n press 4 - to previous menu\n: "
         )
         log.logger("User klick", marker)
 
@@ -19,20 +19,22 @@ def db_repotrs():
             case "1":
                 input_str = "SELECT name,  MATHEMATICS, RUSSIAN, HISTORY FROM PUPILS, ESTIMATE  WHERE pupil_id = PUPILS.id"
                 log.logger("User print report: ", input_str)
+                print("NAME | MATHEMATICS | RUSSIAN | HISTORY")
                 # print(db.get_col_names(db_name, input_str))
-                db.print_str_db("pupils.db", input_str)
+                db.print_str_db(db_name, input_str)
 
             case "2":
                 input_str = "SELECT name,  MATHEMATICS, RUSSIAN, HISTORY FROM PUPILS, ESTIMATE  WHERE pupil_id = PUPILS.id"
                 log.logger("User print report: ", input_str)
-                db.print_str_db("pupils.db", input_str)
+                calculation_arithmetic_mean(db_name, input_str)
 
             case "3":
+                # print(f"Список таблиц в базе данных: {db.select_table_in_bd(db_name)}")
                 input_str = vr.input_data(
                     "Введите запрос, например ('SELECT * FROM pupils;'): "
                 )
                 log.logger("User print report: ", input_str)
-                db.print_str_db("pupils.db", input_str)
+                db.print_str_db(db_name, input_str)
             case "4":
                 log.logger("Exit previous menu", "")
                 is_OK = False
@@ -42,4 +44,19 @@ def db_repotrs():
 
 
 # database_request = 0
-db_repotrs()
+
+
+def calculation_arithmetic_mean(db_name, input_str):
+    con = sl.connect(db_name)
+    cur = con.cursor()
+    cur.execute("{}".format(input_str))
+    for i in cur:
+        mean = (int(i[1]) + int(i[2]) + int(i[3])) / 3
+        print("Ученик {}, средний балл: {:3.1f}".format(i[0], mean))
+
+
+# db_repotrs("pupils.db")
+# calculation_arithmetic_mean(
+#     "pupils.db",
+#     "SELECT name,  MATHEMATICS, RUSSIAN, HISTORY FROM PUPILS, ESTIMATE  WHERE pupil_id = PUPILS.id",
+# )
